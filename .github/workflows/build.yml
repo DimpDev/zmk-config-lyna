@@ -1,10 +1,10 @@
-name: Build ZMK firmware
-
 on: 
-  push: 
-    branches: [main] 
-  pull_request: 
-    branches: [main] 
+  push:
+    branches:
+      - main  # Or specify any branch you want the workflow to trigger on
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -12,9 +12,9 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix: |
-        include:
-          - board: nice_nano_v2
-            shield: lyna_left
-          - board: nice_nano_v2
-            shield: lyna_right
+        [
+          {"board": "nice_nano_v2", "shield": "lyna_left"},
+          {"board": "nice_nano_v2", "shield": "lyna_right"}
+        ]
+
 
