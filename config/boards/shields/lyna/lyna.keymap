@@ -2,12 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 / {
-    behaviors {
-        volume_encoder: volume_encoder {
-            compatible = "ec11";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp>, <&kp>;
-        };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -42,7 +36,7 @@
    &trans    &trans     &trans     &trans                                                                        &trans         &kp LEFT &kp DOWN    &kp RIGHT
                         >;  
                 };
-                sensor-bindings = <&volume_encoder C_VOL_UP C_VOL_DN>;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
