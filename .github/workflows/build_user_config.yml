@@ -4,24 +4,21 @@ on:
   workflow_call:
     inputs:
       build_matrix:
-        description: "Matrix of configurations (boards and shields)"
+        description: "Build matrix JSON data"
         required: true
-        type: object
+        type: string
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
-      matrix: ${{ inputs.build_matrix }}  # Directly use the matrix passed as input
+      matrix: ${{ fromJson(inputs.build_matrix) }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up environment
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - name: Build Firmware
+      - name: Setup ZMK
+        uses: zmkfirmware/zmk@main
+      - name: Build firmware
         run: |
-          echo "Building for board: ${{ matrix.board }} with shield: ${{ matrix.shield }}"
+          echo "Building firmware for ${{ matrix.board }} with shield ${{ matrix.shield }}"
 
