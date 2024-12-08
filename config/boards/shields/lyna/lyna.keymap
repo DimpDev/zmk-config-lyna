@@ -8,8 +8,6 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp>, <&kp>;
         };
-    };
-/ {
         keymap {
                 compatible = "zmk,keymap";
 
