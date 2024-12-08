@@ -4,7 +4,7 @@
 / {
     behaviors {
         volume_encoder: volume_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "ec11";
             #sensor-binding-cells = <0>;
             bindings = <&kp>, <&kp>;
         };
