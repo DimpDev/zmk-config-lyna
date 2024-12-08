@@ -1,6 +1,0 @@
-
-config LYNA_LEFT
-    def_bool $(shields_list_contains,lyna_left)
-
-config LYNA_RIGHT
-    def_bool $(shields_list_contains,lyna_right)
