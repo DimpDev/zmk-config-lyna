@@ -43,11 +43,9 @@ RC(5,0) RC(5,1) RC(5,2) RC(5,3)                                                 
     };
 };
 
-&rotary_encoder {
-    compatible = "zmk,rotary-encoder";
-    label = "Volume Encoder";
-    gpios = <&gpio0 0 GPIO_ACTIVE_LOW>, // Adjust these GPIOs to match your wiring
-            <&gpio0 10 GPIO_ACTIVE_LOW>;
-    steps = <4>; // Number of steps per detent, adjust based on your encoder
+rotary_encoder: rotary_encoder@0 {
+    compatible = "ec11";
+    pin_a = <&gpio1 0>;
+    pin_b = <&gpio1 10>;
+    // other properties
 };
-
