@@ -1,10 +1,9 @@
 config BT_DEVICE_NAME
     default ZMK_KEYBOARD_NAME
 
-config EC11
+config ALPS_EC11
     bool "Enable EC11 encoder"
     default y
     help
       Enable the EC11 encoder support for the encoder module.
-DT_HAS_ALPS_EC11_ENABLED
-    default y
+
