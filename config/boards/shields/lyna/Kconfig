@@ -6,4 +6,5 @@ config EC11
     default y
     help
       Enable the EC11 encoder support for the encoder module.
-
+DT_HAS_ALPS_EC11_ENABLED
+    default y
