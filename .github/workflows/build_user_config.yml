@@ -4,18 +4,24 @@ on:
   workflow_call:
     inputs:
       build_matrix:
-        description: "Path to the build matrix file"
+        description: "Matrix of configurations (boards and shields)"
         required: true
-        type: string
+        type: object
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(inputs.build_matrix) }}
+      matrix: ${{ inputs.build_matrix }}  # Directly use the matrix passed as input
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Build Firmware
+        run: |
+          echo "Building for board: ${{ matrix.board }} with shield: ${{ matrix.shield }}"
 
-      # Add the rest of your steps as needed (build, preparation, etc.)
