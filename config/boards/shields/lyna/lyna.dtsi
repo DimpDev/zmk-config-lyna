@@ -43,7 +43,7 @@ RC(5,0) RC(5,1) RC(5,2) RC(5,3)                                                 
     };
 };
 
-rotary_encoder: rotary_encoder@0 {
+rotary_encoder@0 {
     compatible = "ec11";
     pin_a = <&gpio1 0>;
     pin_b = <&gpio1 10>;
