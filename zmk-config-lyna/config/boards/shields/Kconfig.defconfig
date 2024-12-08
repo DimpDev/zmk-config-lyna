@@ -1,0 +1,17 @@
+if SHIELD_LYNA_LEFT
+
+
+config ZMK_LYNA
+    default "Lyna"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_LYNA_LEFT || SHIELD_LYNA_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
