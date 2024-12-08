@@ -46,7 +46,7 @@ RC(5,0) RC(5,1) RC(5,2) RC(5,3)                                                 
         a-gpios = <0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <20>;
-        status = "enabled";
+        status = "disabled";
     };
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
