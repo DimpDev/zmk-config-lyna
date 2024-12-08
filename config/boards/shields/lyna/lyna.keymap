@@ -43,6 +43,6 @@
                         >;  
                 };
                 sensor-bindings = <&volume_encoder C_VOL_UP C_VOL_DN>;
-        }
+        };
     };
 };
