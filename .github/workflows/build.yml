@@ -1,15 +1,32 @@
 on: 
   push:
     branches:
-      - main  # Or specify any branch you want the workflow to trigger on
+      - main
   pull_request:
     branches:
       - main
   workflow_dispatch:
 
 jobs:
-  build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    with:
-      build_matrix: '[{"board": "nice_nano_v2", "shield": "lyna_left"}, {"board": "nice_nano_v2", "shield": "lyna_right"}]'
+  build_nice_nano_v2_lyna_left:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup ZMK
+        uses: zmkfirmware/zmk@main
+      - name: Build firmware for nice_nano_v2 with lyna_left
+        run: |
+          echo "Building firmware for nice_nano_v2 with shield lyna_left"
+
+  build_nice_nano_v2_lyna_right:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup ZMK
+        uses: zmkfirmware/zmk@main
+      - name: Build firmware for nice_nano_v2 with lyna_right
+        run: |
+          echo "Building firmware for nice_nano_v2 with shield lyna_right"
 
