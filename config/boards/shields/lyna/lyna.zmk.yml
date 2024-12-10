@@ -1,0 +1,14 @@
+file_format: "1"
+id: lyna
+name: Lyna
+type: shield
+url: https://github.com/DimpDev/zmk-config-lyna/
+requires:
+  - pro_micro
+exposes:
+  - GPIO
+features:
+  - keys
+siblings:
+  - lyna_left
+  - lyna_right
